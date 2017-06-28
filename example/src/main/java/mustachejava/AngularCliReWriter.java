@@ -22,7 +22,7 @@ public class AngularCliReWriter {
 
         try{
             //Create file and specify path
-            File angularcli = new File(".angular-cli.json.mustache");
+            File angularcli = new File(".angular-cli.json");
 
             //Create file if it doesn't exist
             if (!angularcli.exists()) {
