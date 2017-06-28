@@ -13,7 +13,7 @@ import java.io.FileWriter;
 
 public class YorcReWriter {
 
-    String projectName = "AnnieProject";
+    String projectName = "MyProject";
 
     public static void main(String[] args) throws IOException {
         MustacheFactory mf = new DefaultMustacheFactory();

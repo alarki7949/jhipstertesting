@@ -4,7 +4,7 @@
       "packageName": "com.test"
     },
     "jhipsterVersion": "4.5.4",
-    "baseName": "AnnieProject",
+    "baseName": "MyProject",
     "packageName": "com.test",
     "packageFolder": "com/test",
     "serverPort": "8080",

@@ -11,30 +11,30 @@ import java.io.File;
 import java.io.FileWriter;
 
 
-public class ReadMeReWriter {
+public class PackageReWriter {
 
     String projectName = "MyProject";
 
     public static void main(String[] args) throws IOException {
         MustacheFactory mf = new DefaultMustacheFactory();
-        Mustache mustache = mf.compile("README.md.mustache");
+        Mustache mustache = mf.compile("package.json.mustache");
         BufferedWriter bw = null;
 
         try{
             //Create file and specify path
-            File readme = new File("README.md");
+            File packagejson = new File("package.json");
 
             //Create file if it doesn't exist
-            if (!readme.exists()) {
-                readme.createNewFile();
+            if (!packagejson.exists()) {
+                packagejson.createNewFile();
             }
 
             //Initialize filewriter
-            FileWriter fw = new FileWriter(readme);
+            FileWriter fw = new FileWriter(packagejson);
             bw = new BufferedWriter(fw);
 
             //Print filled in mustache template
-            mustache.execute(bw, new ReadMeReWriter()).flush();
+            mustache.execute(bw, new PackageReWriter()).flush();
             System.out.println("File written Successfully");
 
         } catch(IOException ioe) {
@@ -50,4 +50,5 @@ public class ReadMeReWriter {
             }
         }
     }
+
 }
