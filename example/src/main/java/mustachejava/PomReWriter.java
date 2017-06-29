@@ -11,13 +11,13 @@ import java.io.File;
 import java.io.FileWriter;
 
 
-public class PackageReWriter {
+public class PomReWriter {
     ReWriterRunner info = new ReWriterRunner();
     String projectName = info.getProjectName1();
 
     public static void main(String[] args) throws IOException {
         MustacheFactory mf = new DefaultMustacheFactory();
-        Mustache mustache = mf.compile("package.json.mustache");
+        Mustache mustache = mf.compile("pom.xml.mustache");
         BufferedWriter bw = null;
 
         try{
@@ -31,17 +31,17 @@ public class PackageReWriter {
             }
 
             //Create file if it doesn't exist
-            File packagejson = new File(dirpath+"\\package.json");
-            if (!packagejson.exists()) {
-                packagejson.createNewFile();
+            File pom = new File(dirpath+"\\pom.xml");
+            if (!pom.exists()) {
+                pom.createNewFile();
             }
 
             //Initialize filewriter
-            FileWriter fw = new FileWriter(packagejson);
+            FileWriter fw = new FileWriter(pom);
             bw = new BufferedWriter(fw);
 
             //Print filled in mustache template
-            mustache.execute(bw, new PackageReWriter()).flush();
+            mustache.execute(bw, new AngularCliReWriter()).flush();
             System.out.println("File written Successfully");
 
         } catch(IOException ioe) {

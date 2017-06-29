@@ -12,17 +12,17 @@ import java.io.FileWriter;
 
 
 public class AngularCliReWriter {
+    ReWriterRunner info = new ReWriterRunner();
+    String projectName = info.getProjectName1();
 
     public static void main(String[] args) throws IOException {
-        ReWriterRunner info = new ReWriterRunner();
-        String projectName = info.getProjectName1();
         MustacheFactory mf = new DefaultMustacheFactory();
         Mustache mustache = mf.compile(".angular-cli.json.mustache");
         BufferedWriter bw = null;
 
         try{
             //Create file path
-            String dirpath = new ReWriterRunner().getPath()+"NewFiles";
+            String dirpath = new ReWriterRunner().getPath()+"\\NewFiles";
 
             //Create directory if it doesn't exist
             File path = new File(dirpath);
