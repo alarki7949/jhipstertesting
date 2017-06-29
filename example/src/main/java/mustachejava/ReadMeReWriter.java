@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class ReadMeReWriter {
 
+
     public static void main(String[] args) throws IOException {
         ReWriterRunner info = new ReWriterRunner();
         String projectName = info.getProjectName1();
@@ -22,13 +23,7 @@ public class ReadMeReWriter {
 
         try{
             //Create file path
-            String s;
-            Scanner in = new Scanner(System.in);
-            System.out.println("Enter the directory name under which the project files are stored.");
-            System.out.println("Example: C:\\Users\\guptad1\\work\\jhipstertesting)");
-            System.out.println("Use double slashes when typing.");
-            s = in.nextLine();
-            String dirpath = s+"\\NewFiles";
+            String dirpath = new ReWriterRunner().getPath()+"NewFiles";
 
             //Create directory if it doesn't exist
             File path = new File(dirpath);
