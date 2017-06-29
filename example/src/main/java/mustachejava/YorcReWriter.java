@@ -22,10 +22,17 @@ public class YorcReWriter {
         BufferedWriter bw = null;
 
         try{
-            //Create file and specify path
-            File yorc = new File(".yo-rc.json");
+            //Create file path
+            String dirpath = new ReWriterRunner().getPath()+"NewFiles";
+
+            //Create directory if it doesn't exist
+            File path = new File(dirpath);
+            if (!path.exists()) {
+                path.mkdir();
+            }
 
             //Create file if it doesn't exist
+            File yorc = new File(dirpath+"\\.yo-rc.json");
             if (!yorc.exists()) {
                 yorc.createNewFile();
             }

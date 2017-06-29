@@ -21,10 +21,17 @@ public class AngularCliReWriter {
         BufferedWriter bw = null;
 
         try{
-            //Create file and specify path
-            File angularcli = new File(".angular-cli.json");
+            //Create file path
+            String dirpath = new ReWriterRunner().getPath()+"NewFiles";
+
+            //Create directory if it doesn't exist
+            File path = new File(dirpath);
+            if (!path.exists()) {
+                path.mkdir();
+            }
 
             //Create file if it doesn't exist
+            File angularcli = new File(dirpath+"\\.angular-cli.json");
             if (!angularcli.exists()) {
                 angularcli.createNewFile();
             }

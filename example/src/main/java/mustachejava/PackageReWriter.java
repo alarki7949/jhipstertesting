@@ -13,7 +13,6 @@ import java.io.FileWriter;
 
 public class PackageReWriter {
 
-
     public static void main(String[] args) throws IOException {
         ReWriterRunner info = new ReWriterRunner();
         String projectName = info.getProjectName1();
@@ -22,10 +21,17 @@ public class PackageReWriter {
         BufferedWriter bw = null;
 
         try{
-            //Create file and specify path
-            File packagejson = new File("package.json");
+            //Create file path
+            String dirpath = new ReWriterRunner().getPath()+"NewFiles";
+
+            //Create directory if it doesn't exist
+            File path = new File(dirpath);
+            if (!path.exists()) {
+                path.mkdir();
+            }
 
             //Create file if it doesn't exist
+            File packagejson = new File(dirpath+"\\package.json");
             if (!packagejson.exists()) {
                 packagejson.createNewFile();
             }
