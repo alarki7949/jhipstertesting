@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.test</groupId>
-    <artifactId>My Project</artifactId>
+    <artifactId>my-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>My Project</name>
@@ -616,7 +616,7 @@
                     <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
                     <diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                     <driver>org.h2.Driver</driver>
-                    <url>jdbc:h2:file:./target/h2db/db/My Project</url>
+                    <url>jdbc:h2:file:./target/h2db/db/my project</url>
                     <defaultSchemaName></defaultSchemaName>
                     <username>My Project</username>
                     <password></password>
@@ -664,7 +664,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker-maven-plugin.version}</version>
                 <configuration>
-                    <imageName>My Project</imageName>
+                    <imageName>my project</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
                         <resource>

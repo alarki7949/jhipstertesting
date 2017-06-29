@@ -1,4 +1,4 @@
-# MyProject
+# My Project
 This application was generated using JHipster 4.5.4, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.5.4](https://jhipster.github.io/documentation-archive/v4.5.4).
 
 ## Development
@@ -72,7 +72,7 @@ will generate few files:
 
 ## Building for production
 
-To optimize the jhipstertesting application for production, run:
+To optimize the My Project application for production, run:
 
     ./mvnw -Pprod clean package
 
