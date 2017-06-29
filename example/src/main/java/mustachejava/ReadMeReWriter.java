@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-
+import java.util.Scanner;
 
 public class ReadMeReWriter {
 
@@ -21,10 +21,23 @@ public class ReadMeReWriter {
         BufferedWriter bw = null;
 
         try{
-            //Create file and specify path
-            File readme = new File("README.md");
+            //Create file path
+            String s;
+            Scanner in = new Scanner(System.in);
+            System.out.println("Enter the directory name under which the project files are stored.");
+            System.out.println("Example: C:\\Users\\guptad1\\work\\jhipstertesting)");
+            System.out.println("Use double slashes when typing.");
+            s = in.nextLine();
+            String dirpath = s+"\\NewFiles";
+
+            //Create directory if it doesn't exist
+            File path = new File(dirpath);
+            if (!path.exists()) {
+                path.mkdir();
+            }
 
             //Create file if it doesn't exist
+            File readme = new File(dirpath+"\\README.md");
             if (!readme.exists()) {
                 readme.createNewFile();
             }
