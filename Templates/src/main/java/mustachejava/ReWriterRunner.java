@@ -32,13 +32,14 @@ public class ReWriterRunner {
         PackageReWriter run2 = new PackageReWriter();
         ReadMeReWriter run3 = new ReadMeReWriter();
         YorcReWriter run4 = new YorcReWriter();
-
+        PomReWriter run5 = new PomReWriter();
 
         try{
             run1.main(null);
             run2.main(null);
             run3.main(null);
             run4.main(null);
+            run5.main(null);
         } catch(IOException ioe) {
             ioe.printStackTrace();
         }
