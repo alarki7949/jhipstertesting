@@ -1,0 +1,3 @@
+Specify project properties here:
+projectName: [yourProjectNameHere]
+otherProperty: []
