@@ -19,22 +19,29 @@ public class YorcReWriter {
         MustacheFactory mf = new DefaultMustacheFactory();
         Mustache mustache = mf.compile("yo-rc.json.mustache");
         BufferedWriter bw = null;
+        String[] pieces = System.getProperty("user.dir").split(System.getProperty("file.separator"));
+        String splitter = System.getProperty("file.separator");
+        String path1 = "";
 
         try{
-            //Create file path
-            String dirpath = new ReWriterRunner().getPath()+"\\NewFiles";
-
-            //Create directory if it doesn't exist
-            File path = new File(dirpath);
-            if (!path.exists()) {
-                path.mkdir();
+            //Mac
+            if(splitter.equals("/")){
+                for(int i = 0; i < pieces.length-1; i++){
+                    path1 += pieces[i] + splitter;
+                }
+                path1 += "NewFiles/";
+            }
+            //Windows
+            else{
+                System.out.println("You are using a Windows!");
+                for(int i = 0; i < pieces.length-1; i++){
+                    path1 += pieces[i] + splitter + splitter;
+                }
+                path1 +="NewFiles\\";
             }
 
             //Create file if it doesn't exist
-            File yorc = new File(dirpath+"\\.yo-rc.json");
-            if (!yorc.exists()) {
-                yorc.createNewFile();
-            }
+            File yorc = new File(path1 + ".yo-rc.json");
 
             //Initialize filewriter
             FileWriter fw = new FileWriter(yorc);

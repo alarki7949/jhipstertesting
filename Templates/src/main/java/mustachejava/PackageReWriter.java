@@ -19,22 +19,29 @@ public class PackageReWriter {
         MustacheFactory mf = new DefaultMustacheFactory();
         Mustache mustache = mf.compile("package.json.mustache");
         BufferedWriter bw = null;
+        String[] pieces = System.getProperty("user.dir").split(System.getProperty("file.separator"));
+        String splitter = System.getProperty("file.separator");
+        String path1 = "";
 
         try{
-            //Create file path
-            String dirpath = new ReWriterRunner().getPath()+"\\NewFiles";
-
-            //Create directory if it doesn't exist
-            File path = new File(dirpath);
-            if (!path.exists()) {
-                path.mkdir();
+            //Mac
+            if(splitter.equals("/")){
+                for(int i = 0; i < pieces.length-1; i++){
+                    path1 += pieces[i] + splitter;
+                }
+                path1 += "NewFiles/";
+            }
+            //Windows
+            else{
+                System.out.println("You are using a Windows!");
+                for(int i = 0; i < pieces.length-1; i++){
+                    path1 += pieces[i] + splitter + splitter;
+                }
+                path1 +="NewFiles\\";
             }
 
             //Create file if it doesn't exist
-            File packagejson = new File(dirpath+"\\package.json");
-            if (!packagejson.exists()) {
-                packagejson.createNewFile();
-            }
+            File packagejson = new File(path1 + "package.json");
 
             //Initialize filewriter
             FileWriter fw = new FileWriter(packagejson);
