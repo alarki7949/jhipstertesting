@@ -19,16 +19,6 @@ public class ReWriterRunner {
         this.projectName = projectName1;
     }
 
-    public static String getPath(){
-        String s;
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter the directory name under which the project files are stored.");
-        System.out.println("Example: C:\\Users\\guptad1\\work\\jhipstertesting)");
-        System.out.println("Use double slashes when typing.");
-        s = in.nextLine();
-        return s;
-    }
-
     public static String getProperty(String propertyName) throws Exception{
         String thisLine = null;
         String toReturn = " ";
