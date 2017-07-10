@@ -11,6 +11,16 @@ import java.io.*;
 public class ReWriterRunner {
     static String projectName;
 
+    public static String getProjectDescription() {
+        return projectDescription;
+    }
+
+    public static void setProjectDescription(String projectDescription) {
+        ReWriterRunner.projectDescription = projectDescription;
+    }
+
+    static String projectDescription;
+
     public String getProjectName1() {
         return projectName;
     }
@@ -24,12 +34,11 @@ public class ReWriterRunner {
         String toReturn = " ";
 
         try {
-            // open input stream test.txt for reading purpose.
             FileReader properties = new FileReader("properties.txt");
             BufferedReader br = new BufferedReader(properties);
 
             while ((thisLine = br.readLine()) != null) {
-                if(thisLine.substring(0,propertyName.length()).equals(propertyName)){
+                if(thisLine.length() > propertyName.length() &&thisLine.substring(0,propertyName.length()).equals(propertyName)){
                     toReturn = thisLine;
                 }
             }
@@ -50,6 +59,7 @@ public class ReWriterRunner {
 
         try{
             projectName = getProperty("projectName");
+            projectDescription = getProperty("projectDescription");
             run1.main(null);
             run2.main(null);
             run3.main(null);

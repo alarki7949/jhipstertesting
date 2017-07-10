@@ -14,6 +14,7 @@ import java.io.FileWriter;
 public class PackageReWriter {
     ReWriterRunner info = new ReWriterRunner();
     String projectName = info.getProjectName1();
+    String projectDescription = info.getProjectDescription();
 
     public static void main(String[] args) throws IOException {
         MustacheFactory mf = new DefaultMustacheFactory();

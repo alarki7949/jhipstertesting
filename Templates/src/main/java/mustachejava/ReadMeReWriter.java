@@ -12,11 +12,10 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class ReadMeReWriter {
-
+    ReWriterRunner info = new ReWriterRunner();
+    String projectName = info.getProjectName1();
 
     public static void main(String[] args) throws IOException {
-        ReWriterRunner info = new ReWriterRunner();
-        String projectName = info.getProjectName1();
         MustacheFactory mf = new DefaultMustacheFactory();
         Mustache mustache = mf.compile("README.md.mustache");
         BufferedWriter bw = null;
