@@ -4,5 +4,7 @@ projectName: [yourProjectNameHere]
 
 projectDescription: [yourDescriptionHere]
 
-packageName: [yourPackageNameHere]
+packagename: [yourPackage.NameHere]
+
+packagefolder: [yourPackage/NameHere]
 

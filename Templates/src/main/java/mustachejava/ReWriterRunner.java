@@ -29,6 +29,26 @@ public class ReWriterRunner {
         this.projectName = projectName1;
     }
 
+    static String packagename;
+
+    public static String getPackagename() {
+        return packagename;
+    }
+
+    public static void setPackagename(String packagename) {
+        ReWriterRunner.packagename = packagename;
+    }
+
+    static String packagefolder;
+
+    public static String getPackagefolder() {
+        return packagefolder;
+    }
+
+    public static void setPackagefolder(String packagefolder) {
+        ReWriterRunner.packagefolder = packagefolder;
+    }
+
     public static String getProperty(String propertyName) throws Exception{
         String thisLine = null;
         String toReturn = " ";
@@ -60,6 +80,8 @@ public class ReWriterRunner {
         try{
             projectName = getProperty("projectName");
             projectDescription = getProperty("projectDescription");
+            packagename = getProperty("packagename");
+            packagefolder = getProperty("packagefolder");
             run1.main(null);
             run2.main(null);
             run3.main(null);
