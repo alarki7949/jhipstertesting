@@ -29,24 +29,24 @@ public class ReWriterRunner {
         this.projectName = projectName1;
     }
 
-    static String packagename;
+    static String packageName;
 
-    public static String getPackagename() {
-        return packagename;
+    public static String getPackageName() {
+        return packageName;
     }
 
-    public static void setPackagename(String packagename) {
-        ReWriterRunner.packagename = packagename;
+    public static void setPackageName(String packageName) {
+        ReWriterRunner.packageName = packageName;
     }
 
-    static String packagefolder;
+    static String packageFolder;
 
-    public static String getPackagefolder() {
-        return packagefolder;
+    public static String getPackageFolder() {
+        return packageFolder;
     }
 
-    public static void setPackagefolder(String packagefolder) {
-        ReWriterRunner.packagefolder = packagefolder;
+    public static void setPackageFolder(String packageFolder) {
+        ReWriterRunner.packageFolder = packageFolder;
     }
 
     public static String getProperty(String propertyName) throws Exception{
@@ -80,8 +80,8 @@ public class ReWriterRunner {
         try{
             projectName = getProperty("projectName");
             projectDescription = getProperty("projectDescription");
-            packagename = getProperty("packagename");
-            packagefolder = getProperty("packagefolder");
+            packageName = getProperty("packageName");
+            packageFolder = getProperty("packageFolder");
             run1.main(null);
             run2.main(null);
             run3.main(null);

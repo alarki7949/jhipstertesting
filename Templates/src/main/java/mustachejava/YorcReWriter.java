@@ -14,8 +14,8 @@ import java.io.FileWriter;
 public class YorcReWriter {
     ReWriterRunner info = new ReWriterRunner();
     String projectName = info.getProjectName1();
-    String packagename = info.getPackagename();
-    String packagefolder = info.getPackagefolder();
+    String packageName = info.getPackageName();
+    String packageFolder = info.getPackageFolder();
 
     public static void main(String[] args) throws IOException {
         MustacheFactory mf = new DefaultMustacheFactory();
