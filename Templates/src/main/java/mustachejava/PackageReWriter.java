@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.regex.Pattern;
 
 
 public class PackageReWriter {
@@ -20,13 +21,13 @@ public class PackageReWriter {
         MustacheFactory mf = new DefaultMustacheFactory();
         Mustache mustache = mf.compile("package.json.mustache");
         BufferedWriter bw = null;
-        String[] pieces = System.getProperty("user.dir").split(System.getProperty("file.separator"));
         String splitter = System.getProperty("file.separator");
         String path1 = "";
 
         try{
             //Mac
             if(splitter.equals("/")){
+                String[] pieces = System.getProperty("user.dir").split(System.getProperty("file.separator"));
                 for(int i = 0; i < pieces.length-1; i++){
                     path1 += pieces[i] + splitter;
                 }
@@ -35,6 +36,8 @@ public class PackageReWriter {
             //Windows
             else{
                 System.out.println("You are using a Windows!");
+                String pattern = Pattern.quote(System.getProperty("file.separator"));
+                String[] pieces = System.getProperty("user.dir").split(pattern);
                 for(int i = 0; i < pieces.length-1; i++){
                     path1 += pieces[i] + splitter + splitter;
                 }

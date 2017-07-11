@@ -5,6 +5,7 @@ import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,13 +20,13 @@ public class AngularCliReWriter {
         MustacheFactory mf = new DefaultMustacheFactory();
         Mustache mustache = mf.compile(".angular-cli.json.mustache");
         BufferedWriter bw = null;
-        String[] pieces = System.getProperty("user.dir").split(System.getProperty("file.separator"));
         String splitter = System.getProperty("file.separator");
         String path1 = "";
 
         try{
             //Mac
             if(splitter.equals("/")){
+                String[] pieces = System.getProperty("user.dir").split(System.getProperty("file.separator"));
                 for(int i = 0; i < pieces.length-1; i++){
                     path1 += pieces[i] + splitter;
                 }
@@ -34,6 +35,8 @@ public class AngularCliReWriter {
             //Windows
             else{
                 System.out.println("You are using a Windows!");
+                String pattern = Pattern.quote(System.getProperty("file.separator"));
+                String[] pieces = System.getProperty("user.dir").split(pattern);
                 for(int i = 0; i < pieces.length-1; i++){
                     path1 += pieces[i] + splitter + splitter;
                 }
